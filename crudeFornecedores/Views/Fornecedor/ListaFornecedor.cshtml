@@ -1,0 +1,30 @@
+﻿@model List<crudeFornecedores.Models.Fornecedor>
+
+<h2>Lista de Fornecedores</h2>
+
+<table class="table">
+    <tr>
+        <th>Razão Social</th>
+        <th>Nome Fantasia</th>
+        <th>E-mail</th>
+        <th>Telefone</th>
+        <th>Endereço Completo</th>
+        <th>Pessoa de Contato</th>
+        <th>Ações</th>
+    </tr>
+    @foreach (var fornecedor in Model)
+    {
+        <tr>
+            <td>@fornecedor.RazaoSocial</td>
+            <td>@fornecedor.NomeFantasia</td>
+            <td>@fornecedor.Email</td>
+            <td>@fornecedor.Telefone</td>
+            <td>@fornecedor.EnderecoCompleto</td>
+            <td>@fornecedor.PessoaContato</td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = fornecedor.Id }) |
+                @Html.ActionLink("Excluir", "Delete", new { id = fornecedor.Id })
+            </td>
+        </tr>
+    }
+</table>

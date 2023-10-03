@@ -1,0 +1,18 @@
+﻿@model crudeFornecedores.Models.Fornecedor
+
+<h2>Editar Fornecedor</h2>
+
+@using (Html.BeginForm("Edit", "Fornecedor", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RazaoSocial)
+        @Html.TextBoxFor(model => model.RazaoSocial, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.RazaoSocial, "", new { @class = "text-danger" })
+    </div>
+
+    <!-- Adicione os campos restantes de forma semelhante ao Create.cshtml -->
+
+    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+}

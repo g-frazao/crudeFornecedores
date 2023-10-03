@@ -1,0 +1,11 @@
+﻿@model crudeFornecedores.Models.Fornecedor
+
+<h2>Confirmar Exclusão</h2>
+
+<p>Tem certeza de que deseja excluir o fornecedor: @Model.RazaoSocial?</p>
+
+@using (Html.BeginForm("DeleteConfirmed", "Fornecedor", new { id = Model.Id }, FormMethod.Post))
+{
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default" })
+}

@@ -1,0 +1,46 @@
+﻿@model crudeFornecedores.Models.Fornecedor
+
+<h2>Cadastrar Fornecedor</h2>
+
+@using (Html.BeginForm("Create", "Fornecedor", FormMethod.Post))
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RazaoSocial)
+        @Html.TextBoxFor(model => model.RazaoSocial, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.RazaoSocial, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NomeFantasia)
+        @Html.TextBoxFor(model => model.NomeFantasia, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.NomeFantasia, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email)
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Telefone)
+        @Html.TextBoxFor(model => model.Telefone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EnderecoCompleto)
+        @Html.TextBoxFor(model => model.EnderecoCompleto, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.EnderecoCompleto, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PessoaContato)
+        @Html.TextBoxFor(model => model.PessoaContato, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.PessoaContato, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+}
